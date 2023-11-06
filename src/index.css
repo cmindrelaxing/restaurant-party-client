@@ -16,6 +16,10 @@ button:hover span, button:hover i, .social p i {
   color: #5dff33;
 }
 
+button.other_btn:hover i{
+  color: #fff;
+}
+
 .social p:hover i {
   color: #ffbe33;
 }

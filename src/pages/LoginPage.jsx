@@ -1,13 +1,18 @@
 
 
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import '../index.css';
+import useAuth from "../hooks/useAuth";
 
 
 
 const LoginPage = () => {
 
+
+    const {signIn, googleLogin, githubLogin} = useAuth();
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const validateEmail = (email) => {
         const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
@@ -41,16 +46,48 @@ const LoginPage = () => {
         }
 
         // Login with email and password
-        
+        signIn(email, password)
+        .then(result => {
+            console.log(result.user);
+            toast.success('Login Successfully completed');
+            
+            // navigate after login success
+            navigate(location?.state ? location?.state : '/')
+        })
+        .catch(err => {
+            console.error(err);
+        });
     };
 
 
 
     // google sign in
-    
+    const googleSignIn = () => {
+        googleLogin()
+            .then(result => {
+                console.log(result.user);
+                // navigation to google sign in page
+                navigate(location?.state ? location?.state : '/');
+            })
+            .catch(err => {
+                console.error(err);
+            });
+    };
 
 
     // github sign up page
+    const githubLogIn = () => {
+        githubLogin()
+            .then(result => {
+                console.log(result.user);
+                toast.success('Successfully toasted!')
+                // navigation to google sign up page
+                navigate(location?.state ? location?.state : '/');
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    };
     
     
 
@@ -88,8 +125,8 @@ const LoginPage = () => {
                         <div>
                             <h2 className="text-2xl font-semibold text-center dancing">Login with</h2>
                             <div className="flex justify-between items-center mt-5 gap-3">
-                                <button className="flex items-center font-medium bg-[#5dff33] text-white py-2 hover:bg-black hover:text-white px-8 rounded-full"><i className='mr-2 bx bxl-google text-black' ></i><span className="text-black">G</span>oogle</button>
-                                <button className="flex items-center font-medium bg-[#5dff33] text-white py-2 hover:bg-black hover:text-white px-8 rounded-full"><i className='mr-2 bx bxl-github text-black' ></i><span className="text-black">G</span>ithub</button>
+                                <button onClick={googleSignIn} className="flex items-center font-medium bg-[#5dff33] text-white py-2 hover:bg-black hover:text-white px-8 rounded-full"><i className='mr-2 bx bxl-google text-black' ></i><span className="text-black">G</span>oogle</button>
+                                <button onClick={githubLogIn} className="flex items-center font-medium bg-[#5dff33] text-white py-2 hover:bg-black hover:text-white px-8 rounded-full"><i className='mr-2 bx bxl-github text-black' ></i><span className="text-black">G</span>ithub</button>
                             </div>
                         </div>
                     </form>
