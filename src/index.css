@@ -20,6 +20,12 @@ button.other_btn:hover i{
   color: #fff;
 }
 
+.box_hover:hover .img_box img {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  transition: all 0.2s ease-in-out;
+}
+
 .social p:hover i {
   color: #ffbe33;
 }

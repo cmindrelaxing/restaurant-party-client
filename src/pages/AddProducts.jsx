@@ -15,6 +15,19 @@ const AddProducts = () => {
 
         const productInfo = {name, price, image, category, description};
         console.log(productInfo);
+
+        // add a new item
+        fetch('http://localhost:5000/foods', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(productInfo),
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        })
     };
 
     return (
