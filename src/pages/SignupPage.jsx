@@ -1,10 +1,14 @@
 import '../index.css';
-import toast from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import useAuth from '../hooks/useAuth';
+import toast from 'react-hot-toast';
 
 
 
 const SignupPage = () => {
+
+    const { createUser } = useAuth();
+    const navigate = useNavigate();
 
     const validateEmail = (email) => {
         const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
@@ -38,7 +42,15 @@ const SignupPage = () => {
         }
 
         // create a new account
-        
+        createUser(email, password)
+        .then(result => {
+            console.log(result.user);
+            toast.success('Successfully toasted!')
+            navigate('/');
+        })
+        .catch(err => {
+            console.error(err);
+        });
     };
 
 
