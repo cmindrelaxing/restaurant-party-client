@@ -1,19 +1,18 @@
 
 import '../index.css';
 import {Link, NavLink } from "react-router-dom";
-// import { useContext } from "react";
-// import { AuthContext } from "../../providers/AuthProvider";
 import Logo from "./Logo";
+import useAuth from '../hooks/useAuth';
 
 const Navbar = () => {
 
-    // const {user, logOut} = useContext(AuthContext);
+    const {user, logOut} = useAuth();
 
-    // const handleSignOut = () => {
-    //     logOut()
-    //         .then()
-    //         .catch()
-    // };
+    const handleSignOut = () => {
+        logOut()
+            .then()
+            .catch()
+    };
 
     const navlinks = <>
 
@@ -52,26 +51,13 @@ const Navbar = () => {
             >
             Add Product
             </NavLink>
-
-            {/* {
-                !user ? <NavLink
-                to="/login"
-                className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "bg-[#5dff33] text-black py-1 px-7 rounded-tl-xl rounded-br-xl   hover:text-white hover:bg-black hover:rounded-tl-none hover:rounded-br-none hover:rounded-tr-xl hover:rounded-bl-xl " : " "
-                }
-                >
-                Login
-                </NavLink>
-                :
-                ''
-            } */}
             
         </>
 
 
     return (
         <div>
-            <div className="navbar bg-base-100  py-4 px-4 lg:px-0 flex justify-between z-50 area mx-auto">
+            <div className="navbar bg-base-100  py-4 lg:px-0 flex justify-between z-50 area mx-auto">
                 <div className=" z-50">
                     <div className="dropdown  z-50">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -95,7 +81,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="flex items-center  z-50">
-                    {/* {
+                    {
                         user  ? 
                         <div className="flex justify-between items-center gap-3">
                             {
@@ -107,16 +93,13 @@ const Navbar = () => {
                                 :
                                 <span className="hidden sm:inline"><small>{user.email}</small></span>
                             }
-                            <button onClick={handleSignOut} className="bg-[#5dff33] text-white py-1 font-semibold hover:bg-black hover:text-white px-8 rounded-full">Sign Out</button>
+                            <button onClick={handleSignOut} className="bg-[#5dff33] text-white py-2 md:py-1 font-semibold hover:bg-black hover:text-white px-6 md:px-8 rounded-full">Sign Out</button>
                         </div>
                         :
                         <Link to={'/login'}>
-                            <button className="bg-[#5dff33] text-white py-1 font-semibold hover:bg-black hover:text-white px-8 rounded-full">Login</button>
+                            <button className="bg-[#5dff33] text-white py-2 md:py-1 font-semibold hover:bg-black hover:text-white px-6 md:px-8 rounded-full">Login</button>
                         </Link>
-                    } */}
-                    <Link to={'/login'}>
-                        <button className="bg-[#5dff33] text-black py-1 font-semibold hover:bg-black hover:text-white px-8 rounded-tl-xl rounded-br-xl   hover:rounded-tl-none hover:rounded-br-none hover:rounded-tr-xl hover:rounded-bl-xl ">Login</button>
-                    </Link>
+                    }
                 </div>
             </div>
         </div>
