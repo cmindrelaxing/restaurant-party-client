@@ -8,7 +8,7 @@ const UpdateFood = () => {
 
     const foods = useLoaderData();
     // console.log(foods);
-    const { _id, name, image, description, price, made, category, country } = foods || {};
+    const { _id, name, image, description, price, made, category, country, rating } = foods || {};
 
     const updateFood = e => {
         e.preventDefault();
@@ -88,7 +88,7 @@ const UpdateFood = () => {
                         <label className="label">
                             <span className="label-text dancing font-bold text-lg">Top Sell Food</span>
                         </label>
-                        <input type="text" placeholder="Top or Hot" name="rating" className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" />
+                        <input type="text" placeholder="Top or Hot" name="rating" defaultValue={rating} className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" />
                         </div>
 
                         <div className='md:flex md:justify-between gap-5'>
