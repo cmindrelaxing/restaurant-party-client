@@ -7,7 +7,7 @@ import '../index.css';
 const Home = () => {
 
     const foods = useLoaderData();
-    console.log(foods);
+    // console.log(foods);
 
     return (
         <div>

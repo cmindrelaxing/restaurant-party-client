@@ -1,9 +1,10 @@
 
-import PropTypes from 'prop-types';
-import '../index.css';
-import { Link } from 'react-router-dom';
 
-const AllItemShow = ({food}) => {
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import '../index.css';
+
+const FoodItem = ({food}) => {
 
     const { name, image, description, price, category} = food || {};
 
@@ -37,8 +38,8 @@ const AllItemShow = ({food}) => {
     );
 };
 
-AllItemShow.propTypes = {
+FoodItem.propTypes = {
     food: PropTypes.object
 };
 
-export default AllItemShow;
+export default FoodItem;
