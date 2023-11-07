@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import AllItemShow from "../components/AllItemShow";
 import DiscountFood from "../components/DiscountFood";
 import WeAreParty from "../components/WeAreParty";
@@ -25,11 +25,11 @@ const Home = () => {
                 foods?.map(food => <AllItemShow key={food._id} food={food}></AllItemShow>)
             }
             </div>
-            {/* <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 area mx-auto md:px-5 lg:px-0">
-            {
-                foods?.map(food => <AllItemShow key={food._id} food={food}></AllItemShow>)
-            }
-            </div> */}
+            <div className='text-center pt-20 '>
+                <Link to={'/allFoodItems'}>
+                        <button className="bg-[#5dff33] text-white py-2 font-semibold capitalize hover:bg-orange-400 hover:text-white px-6 md:px-8 rounded-full">see all Food</button>
+                </Link>
+            </div>
             <WeAreParty></WeAreParty>
             <Review></Review>
         </div>

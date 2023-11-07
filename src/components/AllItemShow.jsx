@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const AllItemShow = ({food}) => {
 
-    const { name, image, description, price, category} = food || {};
+    const { _id, name, image, description, price, category} = food || {};
 
     return (
         <div>
@@ -35,8 +35,8 @@ const AllItemShow = ({food}) => {
                         <p className='text-[#5dff33]'>{category}</p>
                     </div>
                     <div className='text-center pb-5'>
-                    <Link to={'/allFoodItems'}>
-                            <button className="bg-[#5dff33] text-white py-2 font-semibold capitalize hover:bg-orange-400 hover:text-white px-6 md:px-8 rounded-full">see all Food</button>
+                    <Link to={`/foods/${_id}`}>
+                            <button className="bg-[#5dff33] text-white py-2 font-semibold capitalize hover:bg-orange-400 hover:text-white px-6 md:px-8 rounded-full">Details</button>
                     </Link>
                     </div>
                 </div>
