@@ -71,14 +71,14 @@ const AddProducts = () => {
                         <label className="label">
                             <span className="label-text dancing font-bold text-lg">Food Category</span>
                         </label>
-                        <input type="text" placeholder="Category..." name="category" className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
+                        <input type="text" placeholder="Category" name="category" className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
                         </div>
 
                         <div className="form-control">
                         <label className="label">
                             <span className="label-text dancing font-bold text-lg">Top Sell Food</span>
                         </label>
-                        <input type="text" placeholder="Top or High..." name="rating" className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
+                        <input type="text" placeholder="Top or Hot" name="rating" className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
                         </div>
 
                         <div className='md:flex md:justify-between gap-5'>
