@@ -14,8 +14,9 @@ const AddProducts = () => {
         const description = form.description.value;
         const made = form.made.value;
         const country = form.country.value;
+        const rating = form.rating.value;
 
-        const productInfo = {name, price, image, category, description, made, country};
+        const productInfo = {name, price, image, category, description, made, country, rating};
         console.log(productInfo);
 
         // add a new item
@@ -71,6 +72,13 @@ const AddProducts = () => {
                             <span className="label-text dancing font-bold text-lg">Food Category</span>
                         </label>
                         <input type="text" placeholder="Category..." name="category" className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
+                        </div>
+
+                        <div className="form-control">
+                        <label className="label">
+                            <span className="label-text dancing font-bold text-lg">Top Sell Food</span>
+                        </label>
+                        <input type="text" placeholder="Top or High..." name="rating" className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
                         </div>
 
                         <div className='md:flex md:justify-between gap-5'>
