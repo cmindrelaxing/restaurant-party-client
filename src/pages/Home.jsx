@@ -3,6 +3,7 @@ import AllItemShow from "../components/AllItemShow";
 import DiscountFood from "../components/DiscountFood";
 import WeAreParty from "../components/WeAreParty";
 import '../index.css';
+import Banner from "../components/Banner";
 
 const Home = () => {
 
@@ -11,6 +12,7 @@ const Home = () => {
 
     return (
         <div>
+            <Banner></Banner>
             <DiscountFood></DiscountFood>
             <div className="my-20">
             <h1 className="text-center font-bold text-4xl dancing">Our Menu</h1>
