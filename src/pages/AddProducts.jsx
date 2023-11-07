@@ -12,8 +12,10 @@ const AddProducts = () => {
         const image = form.image.value;
         const category = form.category.value;
         const description = form.description.value;
+        const made = form.made.value;
+        const country = form.country.value;
 
-        const productInfo = {name, price, image, category, description};
+        const productInfo = {name, price, image, category, description, made, country};
         console.log(productInfo);
 
         // add a new item
@@ -34,12 +36,12 @@ const AddProducts = () => {
         <div className=" min-h-screen bg-base-200 flex items-center justify-center py-20 ">
             <div className="hero-content w-full flex-col-reverse md:flex-row justify-center">
 
-                <div className="text-center mb-2 mt-16 md:mt-0">
+                <div className="text-center mb-2 mt-16 md:mt-0 md:w-[45%]">
                     {/* <h1 className="text-5xl font-bold mb-14">Signup now!</h1> */}
-                    <img className='lg:w-[85%]' src="https://i.ibb.co/hYHTbB5/about-img.png" alt="" />
+                    <img className='md:w-full lg:w-[85%]' src="https://i.ibb.co/hYHTbB5/about-img.png" alt="" />
                 </div>
 
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100 md:w-[55%]">
                     <form onSubmit={addNewItem} className="card-body" data-aos="flip-right">
                         <h2 className="text-2xl font-semibold text-center dancing">Add a New Product</h2>
 
@@ -69,6 +71,22 @@ const AddProducts = () => {
                             <span className="label-text dancing font-bold text-lg">Food Category</span>
                         </label>
                         <input type="text" placeholder="Category..." name="category" className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
+                        </div>
+
+                        <div className='md:flex md:justify-between gap-5'>
+                            <div className="form-control w-full">
+                            <label className="label">
+                                <span className="label-text dancing font-bold text-lg">Made By</span>
+                            </label>
+                            <input type="text" placeholder="John" name="made" className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
+                            </div>
+
+                            <div className="form-control w-full">
+                            <label className="label">
+                                <span className="label-text dancing font-bold text-lg">Food Orign ( Country )</span>
+                            </label>
+                            <input type="text" placeholder="Food Orign" name="country" className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
+                            </div>
                         </div>
 
                         <div className="form-control">

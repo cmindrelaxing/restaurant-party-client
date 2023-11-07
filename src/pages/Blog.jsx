@@ -5,7 +5,7 @@ import  '../index.css';
 const Blog = () => {
     return (
         <div className='pt-10 py-20'>
-            <div className="area mx-auto">
+            <div className="area mx-auto md:px-10">
                 {/* Blog ques: no: 1 */}
                 <section>
                     <img src="" alt="" />
