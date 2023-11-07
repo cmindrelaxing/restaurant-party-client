@@ -34,8 +34,9 @@ const routes = createBrowserRouter([
                 element: <AddProducts></AddProducts>
             },
             {
-                path: '/updateProducts',
-                element: <UpdateProducts></UpdateProducts>
+                path: '/updateProducts/:id',
+                element: <UpdateProducts></UpdateProducts>,
+                loader: ({params}) => fetch(`http://localhost:5000/foods/${params.id}`)
             },
             {
                 path: '/signup',

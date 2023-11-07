@@ -1,19 +1,11 @@
 
-// const UpdateProducts = () => {
-//     return (
-//         <div>
-            
-//         </div>
-//     );
-// };
-
-// export default UpdateProducts;
-
-
-
+import { useLoaderData } from 'react-router-dom';
 import '../index.css';
 
 const UpdateProducts = () => {
+
+    const update = useLoaderData();
+    console.log(update);
 
     const updateItem = e => {
         e.preventDefault();

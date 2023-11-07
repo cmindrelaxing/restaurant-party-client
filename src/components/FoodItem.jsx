@@ -6,7 +6,7 @@ import '../index.css';
 
 const FoodItem = ({food}) => {
 
-    const { name, image, description, price, category} = food || {};
+    const { _id, name, image, description, price, category} = food || {};
 
     return (
         <div>
@@ -33,7 +33,7 @@ const FoodItem = ({food}) => {
                         <p className='text-[#5dff33]'>{category}</p>
                     </div>
                     <div className='flex justify-between items-center pb-5'>
-                    <Link to={'/updateProducts'}>
+                    <Link to={`/updateProducts/${_id}`}>
                         <button className="bg-[#5dff33] text-white py-2 md:py-1 font-semibold hover:bg-orange-400 hover:text-white px-6 md:px-8 rounded-full">Update</button>
                     </Link>
                     <Link to={'/login'}>
