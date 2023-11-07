@@ -13,10 +13,12 @@ const Detail = ({details}) => {
     const orderConfirm = () => {
         const countInfo = countOrder + 1;
         setCountOrder(countInfo);
-        toast.success('Successfully toasted!')
+        if(countInfo > 0) {
+            toast.success(`Successfully order confirm ${name}!`)
+        }
     };
 
-    console.log(countOrder);
+    // console.log(countOrder);
 
     return (
         <div className="py-20 space-y-5">
