@@ -1,25 +1,15 @@
 
-// const UpdateFood = () => {
-//     return (
-//         <div>
-//             Hi
-//         </div>
-//     );
-// };
 
-// export default UpdateFood;
-
-
-
-import { useParams } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 import '../index.css';
 
 const UpdateFood = () => {
 
-    const {id} = useParams();
-    console.log(id);
+    const foods = useLoaderData();
+    // console.log(foods);
+    const { name, image, description, price, made, category, country } = foods || {};
 
-    const addNewItem = e => {
+    const updateFood = e => {
         e.preventDefault();
 
         const form  = e.target;
@@ -36,7 +26,7 @@ const UpdateFood = () => {
 
         // add a new item
         fetch('http://localhost:5000/foods', {
-            method: 'POST',
+            method: 'UPDATE',
             headers: {
                 'content-type': 'application/json',
             },
@@ -58,8 +48,8 @@ const UpdateFood = () => {
                 </div>
 
                 <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100 md:w-[55%]">
-                    <form onSubmit={addNewItem} className="card-body" data-aos="flip-right">
-                        <h2 className="text-2xl font-semibold text-center dancing">Add a New Product</h2>
+                    <form onSubmit={updateFood} className="card-body" data-aos="flip-right">
+                        <h2 className="text-2xl font-semibold text-center dancing">Update Food</h2>
 
                         <div className="form-control">
                         <label className="label">
@@ -72,21 +62,21 @@ const UpdateFood = () => {
                         <label className="label">
                             <span className="label-text dancing font-bold text-lg">Food Price</span>
                         </label>
-                        <input type="text" placeholder="Price" name="price" className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
+                        <input type="text" placeholder="Price" name="price" defaultValue={price} className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
                         </div>
 
                         <div className="form-control">
                         <label className="label">
                             <span className="label-text dancing font-bold text-lg">Food Image</span>
                         </label>
-                        <input type="text" placeholder="Example: https://image.jpg" name="image" className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
+                        <input type="text" placeholder="Example: https://image.jpg" name="image" defaultValue={image} className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
                         </div>
 
                         <div className="form-control">
                         <label className="label">
                             <span className="label-text dancing font-bold text-lg">Food Category</span>
                         </label>
-                        <input type="text" placeholder="Category..." name="category" className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
+                        <input type="text" placeholder="Category..." name="category" defaultValue={category} className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
                         </div>
 
                         <div className='md:flex md:justify-between gap-5'>
@@ -94,14 +84,14 @@ const UpdateFood = () => {
                             <label className="label">
                                 <span className="label-text dancing font-bold text-lg">Made By</span>
                             </label>
-                            <input type="text" placeholder="John" name="made" className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
+                            <input type="text" placeholder="John" name="made" defaultValue={made} className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
                             </div>
 
                             <div className="form-control w-full">
                             <label className="label">
                                 <span className="label-text dancing font-bold text-lg">Food Orign ( Country )</span>
                             </label>
-                            <input type="text" placeholder="Food Orign" name="country" className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
+                            <input type="text" placeholder="Food Orign" name="country" defaultValue={country} className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
                             </div>
                         </div>
 
@@ -109,11 +99,11 @@ const UpdateFood = () => {
                         <label className="label">
                             <span className="label-text dancing font-bold text-lg">Food Description</span>
                         </label>
-                        <textarea  className=' text-xs rounded-lg border-2 focus:outline-none p-4 focus:border-[2px] focus:border-[#5dff33]' name="description" id="" placeholder='Description...' cols="30" rows="5"></textarea>
+                        <textarea  className=' text-xs rounded-lg border-2 focus:outline-none p-4 focus:border-[2px] focus:border-[#5dff33]' name="description" defaultValue={description} id="" placeholder='Description...' cols="30" rows="5"></textarea>
                         </div>
 
                         <div className="form-control mt-6">
-                        <button className="btn text-white py-2 bg-[#5dff33] capitalize hover:bg-black hover:text-white rounded-full">Add new Collection</button>
+                        <button className="btn text-white py-2 bg-[#5dff33] capitalize hover:bg-black hover:text-white rounded-full"> Add Update Collection </button>
                         </div>
 
                     </form>
