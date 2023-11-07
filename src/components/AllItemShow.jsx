@@ -31,6 +31,11 @@ const AllItemShow = ({food}) => {
                         <p className='font-semibold flex items-center gap-1'>$ {price}</p>
                         <p className='text-[#5dff33]'>{category}</p>
                     </div>
+                    <div className='text-center pb-5'>
+                    <Link to={'/allFoodItems'}>
+                            <button className="bg-[#5dff33] text-white py-2 font-semibold capitalize hover:bg-orange-400 hover:text-white px-6 md:px-8 rounded-full">see all Food</button>
+                    </Link>
+                    </div>
                 </div>
             </div>
         </div>
