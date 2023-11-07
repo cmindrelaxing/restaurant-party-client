@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import '../index.css';
 import Swal from 'sweetalert2';
 
-const FoodItem = ({food}) => {
+const FoodItem = ({food, foods, setFoods}) => {
 
     const { _id, name, image, description, price, category} = food || {};
 
@@ -34,6 +34,8 @@ const FoodItem = ({food}) => {
                     text: "Your Food has been deleted successfully.",
                     icon: "success"
                     });
+                    const remaining = foods?.filter(foo => foo._id !== _id);
+                    setFoods(remaining);
                 }
             })
             }
@@ -79,7 +81,9 @@ const FoodItem = ({food}) => {
 };
 
 FoodItem.propTypes = {
-    food: PropTypes.object
+    food: PropTypes.object,
+    foods: PropTypes.array,
+    setFoods: PropTypes.func
 };
 
 export default FoodItem;

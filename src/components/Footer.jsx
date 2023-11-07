@@ -4,7 +4,7 @@ import '../index.css';
 
 const Footer = () => {
     return (
-        <div className='bg-[#222831] pb-10 md:pb-6 pt-14'>
+        <div className='bg-[#222831] pb-10 md:pb-6 pt-14 lg:px-10 xl:px-0'>
             <div className=' px-5 lg:px-0 text-white'>
                 <div className="area mx-auto grid grid-cols-1 md:grid-cols-3">
                     <div className='mb-16 md:mb-0'>

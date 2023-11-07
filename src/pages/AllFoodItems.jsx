@@ -2,11 +2,13 @@
 import { useLoaderData } from 'react-router-dom';
 import '../index.css';
 import FoodItem from '../components/FoodItem';
+import { useState } from 'react';
 
 const AllFoodItems = () => {
 
-    const foods = useLoaderData();
+    const loadedFoods = useLoaderData();
     // console.log(foods);
+    const [foods, setFoods] = useState(loadedFoods);
 
     return (
         <div className='pb-20 pt-10'>
@@ -18,7 +20,7 @@ const AllFoodItems = () => {
                 </div>
                 <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 area mx-auto md:px-5 lg:px-0'>
                     {
-                        foods?.map(food => <FoodItem key={food._id} food={food}></FoodItem>)
+                        foods?.map(food => <FoodItem key={food._id} food={food} foods={foods} setFoods={setFoods}></FoodItem>)
                     }
                 </div>
             </div>

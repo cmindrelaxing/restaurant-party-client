@@ -14,7 +14,7 @@ const Detail = ({details}) => {
         const countInfo = countOrder + 1;
         setCountOrder(countInfo);
         if(countInfo > 0) {
-            toast.success(`Successfully order confirm ${name}!`)
+            toast.success(`Successfully order confirm ${name}`)
         }
     };
 
@@ -33,10 +33,10 @@ const Detail = ({details}) => {
                     made || country ? 
                     <div className=' md:w-4/5 lg:w-1/2 flex justify-between px-4 md:px-0 items-center gap-10'>
                     {
-                        made ? <p className='font-semibold '>Made by : {made}</p> : ''
+                        made ? <p className='font-semibold dancing lg:text-lg text-orange-500'>Made by : {made}</p> : ''
                     }
                     {
-                        country ? <p className='font-semibold'>Food Orign ( Country ): {country}</p> : ''
+                        country ? <p className='font-semibold dancing lg:text-lg text-orange-500'>Food Orign ( Country ): {country}</p> : ''
                     }
                     </div>
 
@@ -47,7 +47,7 @@ const Detail = ({details}) => {
 
                 <div className=' md:w-4/5 lg:w-1/2 flex px-4 md:px-0 items-center gap-10'>
                     <p className='text-3xl dancing font-bold '>$ {price}</p>
-                    <p className='font-semibold'>{category}</p>
+                    <p className='font-bold dancing text-3xl'>{category}</p>
                 </div>
 
                 <div className='flex items-center gap-10'>
