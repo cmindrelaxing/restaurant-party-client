@@ -4,6 +4,7 @@ import DiscountFood from "../components/DiscountFood";
 import WeAreParty from "../components/WeAreParty";
 import '../index.css';
 import Banner from "../components/Banner";
+import Review from "../components/Review";
 
 const Home = () => {
 
@@ -30,6 +31,7 @@ const Home = () => {
             }
             </div> */}
             <WeAreParty></WeAreParty>
+            <Review></Review>
         </div>
     );
 };
