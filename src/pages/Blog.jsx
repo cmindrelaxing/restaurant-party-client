@@ -111,7 +111,7 @@ const Blog = () => {
 
                         <div className='space-y-4'>
                         <h2 className='text-4xl font-bold dancing mt-14 text-[#5dff33]'>Conclusion</h2>
-                        <p><small>Choosing between MongoDB and MySQL depends on your projects specific requirements. While MongoDB offers flexibility and scalability for rapidly evolving data, MySQL provides a solid foundation for applications with structured data needs. Your decision should consider factors such as data model, query language, scalability, schema requirements, and your project's use case. In some cases, a hybrid approach using both databases might even be appropriate to leverage the strengths of each in different parts of your application.</small></p>
+                        <p><small>Choosing between MongoDB and MySQL depends on your projects specific requirements. While MongoDB offers flexibility and scalability for rapidly evolving data, MySQL provides a solid foundation for applications with structured data needs. Your decision should consider factors such as data model, query language, scalability, schema requirements, and your projects use case. In some cases, a hybrid approach using both databases might even be appropriate to leverage the strengths of each in different parts of your application.</small></p>
                         </div>
                     </div>
                 </section>
