@@ -33,7 +33,7 @@ const FoodItem = ({food}) => {
                         <p className='text-[#5dff33]'>{category}</p>
                     </div>
                     <div className='flex justify-between items-center pb-5'>
-                    <Link to={'/login'}>
+                    <Link to={'/updateProducts'}>
                         <button className="bg-[#5dff33] text-white py-2 md:py-1 font-semibold hover:bg-orange-400 hover:text-white px-6 md:px-8 rounded-full">Update</button>
                     </Link>
                     <Link to={'/login'}>
