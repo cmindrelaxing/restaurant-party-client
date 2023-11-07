@@ -2,12 +2,13 @@
 
 import { useLoaderData } from 'react-router-dom';
 import '../index.css';
+import toast from 'react-hot-toast';
 
 const UpdateFood = () => {
 
     const foods = useLoaderData();
     // console.log(foods);
-    const { name, image, description, price, made, category, country } = foods || {};
+    const { _id, name, image, description, price, made, category, country } = foods || {};
 
     const updateFood = e => {
         e.preventDefault();
@@ -22,20 +23,23 @@ const UpdateFood = () => {
         const country = form.country.value;
         const rating = form.rating.value;
 
-        const productInfo = {name, price, image, category, description, made, country, rating};
-        console.log(productInfo);
+        const updateFood = {name, price, image, category, description, made, country, rating};
+        console.log(updateFood);
 
         // add a new item
-        fetch('http://localhost:5000/foods', {
-            method: 'UPDATE',
+        fetch(`http://localhost:5000/foods/${_id}`, {
+            method: 'PUT',
             headers: {
                 'content-type': 'application/json',
             },
-            body: JSON.stringify(productInfo),
+            body: JSON.stringify(updateFood),
         })
         .then(res => res.json())
         .then(data => {
             console.log(data);
+            if(data.modifiedCount > 0) {
+                toast.success(`Updated food successfully ${name}`)
+            }
         })
     };
 

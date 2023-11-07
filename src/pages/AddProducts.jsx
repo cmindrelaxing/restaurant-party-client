@@ -1,4 +1,5 @@
 
+import toast from 'react-hot-toast';
 import '../index.css';
 
 const AddProducts = () => {
@@ -30,6 +31,9 @@ const AddProducts = () => {
         .then(res => res.json())
         .then(data => {
             console.log(data);
+            if(data.insertedId) {
+                toast.success(`Add new Food successfully ${name}`)
+            }
         })
     };
 
