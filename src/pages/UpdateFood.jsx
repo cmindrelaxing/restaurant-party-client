@@ -11,9 +11,13 @@
 
 
 
+import { useParams } from 'react-router-dom';
 import '../index.css';
 
 const UpdateFood = () => {
+
+    const {id} = useParams();
+    console.log(id);
 
     const addNewItem = e => {
         e.preventDefault();
@@ -61,7 +65,7 @@ const UpdateFood = () => {
                         <label className="label">
                             <span className="label-text dancing font-bold text-lg">Food Name</span>
                         </label>
-                        <input type="text" placeholder="Name" name="name" className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
+                        <input type="text" placeholder="Name" name="name" defaultValue={name} className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
                         </div>
 
                         <div className="form-control">

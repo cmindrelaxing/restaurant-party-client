@@ -3,10 +3,42 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import '../index.css';
+import Swal from 'sweetalert2';
 
 const FoodItem = ({food}) => {
 
     const { _id, name, image, description, price, category} = food || {};
+
+    const confirmDelete = _id => {
+        console.log(`Confirm Delete ${_id}`);
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be delete this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#5dff33",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+          }).then((result) => {
+            if (result.isConfirmed) {
+            // delete by _id
+            fetch(`http://localhost:5000/foods/${_id}`, {
+                method: "DELETE",
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if(data.deletedCount > 0) {
+                    Swal.fire({
+                    title: "Deleted!",
+                    text: "Your Food has been deleted successfully.",
+                    icon: "success"
+                    });
+                }
+            })
+            }
+        });
+    };
 
     return (
         <div>
@@ -36,9 +68,9 @@ const FoodItem = ({food}) => {
                     <Link to={`/updateFood/${_id}`}>
                         <button className="bg-[#5dff33] text-white py-2 md:py-1 font-semibold hover:bg-orange-400 hover:text-white px-6 md:px-8 rounded-full">Update</button>
                     </Link>
-                    <Link to={'/login'}>
-                        <button className="bg-[#5dff33] text-white py-2 md:py-1 font-semibold hover:bg-orange-400 hover:text-white px-6 md:px-8 rounded-full">Delete</button>
-                    </Link>
+                    <div>
+                        <button onClick={() => confirmDelete(_id)} className="bg-[#5dff33] text-white py-2 md:py-1 font-semibold hover:bg-orange-400 hover:text-white px-6 md:px-8 rounded-full">Delete</button>
+                    </div>
                     </div>
                 </div>
             </div>
