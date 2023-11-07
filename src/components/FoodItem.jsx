@@ -55,7 +55,7 @@ const FoodItem = ({food, foods, setFoods}) => {
                         description.length > 150 
                         ?
                         <p className=""><small>{description.slice(0, 160)}.
-                        <Link  
+                        <Link to={`/foods/${_id}`} 
                         className="text-[#5dff33] font-bold"> Read More...
                         </Link> </small></p>
                         :

@@ -5,16 +5,23 @@ import { Link } from 'react-router-dom';
 
 const AllItemShow = ({food}) => {
 
-    const { _id, name, image, description, price, category} = food || {};
+    const { _id, name, image, description, price, category, rating} = food || {};
 
     return (
         <div>
             <div className='box_hover bg-[#222831] text-white rounded-lg md:rounded-xl rounded-bl-lg rounded-br-lg '>
                 <div className=' relative img_box bg-[#F1F2F3] py-10 rounded-tl-lg rounded-tr-lg rounded-bl-3xl w-full'>
                     <img className='mx-auto w-[150px] h-[150px]' src={image} alt="" />
-                    <div className=' absolute top-5 right-5 bg-[#5dff33] w-14 h-14 flex justify-center items-center rounded-full'>
-                        <p className='capitalize font-bold dancing text-xl'>Top</p>
-                    </div>
+                    {
+                        rating ?
+                        <div className=' absolute top-5 right-5 bg-[#5dff33] w-14 h-14 flex justify-center items-center rounded-full'>
+                            <p className='capitalize font-bold dancing text-xl'>{rating}</p>
+                        </div>
+
+                        :
+
+                        ''
+                    }
                 </div>
                 <div className='space-y-4 p-5'>
                     <h2>{name}</h2>
@@ -23,7 +30,7 @@ const AllItemShow = ({food}) => {
                         description.length > 150 
                         ?
                         <p className=""><small>{description.slice(0, 160)}.
-                        <Link  
+                        <Link to={`/foods/${_id}`}
                         className="text-[#5dff33] font-bold"> Read More...
                         </Link> </small></p>
                         :
