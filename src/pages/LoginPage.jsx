@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import '../index.css';
 import useAuth from "../hooks/useAuth";
 import { Helmet } from "react-helmet";
+import axios from "axios";
 
 
 
@@ -49,11 +50,19 @@ const LoginPage = () => {
         // Login with email and password
         signIn(email, password)
         .then(result => {
-            console.log(result.user);
+            const loggedInUser = result.user;
+            console.log(loggedInUser);
+            const user = {email};
             toast.success('Login Successfully completed');
             
             // navigate after login success
-            navigate(location?.state ? location?.state : '/')
+            // navigate(location?.state ? location?.state : '/')
+
+            // get access token
+            axios.post('http://localhost:5000/jwt', user)
+            .then(res => {
+                console.log(res.data);
+            })
         })
         .catch(err => {
             console.error(err);
