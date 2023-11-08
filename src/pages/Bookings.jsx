@@ -36,10 +36,12 @@ const Bookings = () => {
             if (result.isConfirmed) {
     
 
-            fetch(`http://localhost:5000/bookings/${id}`)
+            fetch(`http://localhost:5000/bookings/${id}`, {
+                method: 'DELETE',
+            })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 if(data.deletedCount > 0) {
                     Swal.fire({
                     title: "Deleted!",

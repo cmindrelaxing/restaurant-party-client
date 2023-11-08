@@ -49,7 +49,6 @@ const BookingRow = ({booking, handleDelete}) => {
 BookingRow.propTypes = {
     booking: PropTypes.any,
     handleDelete: PropTypes.any,
-    handleBookingConfirm: PropTypes.any
 };
 
 export default BookingRow;
