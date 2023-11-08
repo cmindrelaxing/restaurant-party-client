@@ -27,7 +27,8 @@ const SignupPage = () => {
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        const signupInfo = {name, email, password};
+        const photo = form.photo.value;
+        const signupInfo = {name, email, password, photo};
         console.log(signupInfo);
 
         // Validate email and password
@@ -108,6 +109,13 @@ const SignupPage = () => {
                             <span className="label-text">Email</span>
                         </label>
                         <input type="email" placeholder="email" name="email" className="focus:outline-none focus:border-[2px] focus:border-[#5dff33] focus:text-[#5dff33] input input-bordered" required />
+                        </div>
+
+                        <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Photo URL</span>
+                        </label>
+                        <input type="text" placeholder="URL" name="photo" className="focus:outline-none focus:border-[2px] focus:border-[#5dff33] focus:text-[#5dff33] input input-bordered" required />
                         </div>
 
                         <div className="form-control">
