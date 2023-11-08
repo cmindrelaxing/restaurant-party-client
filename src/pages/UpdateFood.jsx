@@ -56,7 +56,7 @@ const UpdateFood = () => {
                     <img className='md:w-full lg:w-[85%]' src="https://i.ibb.co/hYHTbB5/about-img.png" alt="" />
                 </div>
 
-                <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100 md:w-[55%]">
+                <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100">
                     <form onSubmit={updateFood} className="card-body" data-aos="flip-right">
                         <h2 className="text-2xl font-semibold text-center dancing">Update Food</h2>
 
@@ -119,7 +119,7 @@ const UpdateFood = () => {
                         </div>
 
                         <div className="form-control mt-6">
-                        <button className="btn text-white py-2 bg-[#5dff33] capitalize hover:bg-black hover:text-white rounded-full"> Add Update Collection </button>
+                        <button className="btn text-white py-2 px-5 bg-[#5dff33] capitalize hover:bg-black hover:text-white rounded-full"> Add Update Collection </button>
                         </div>
 
                     </form>
