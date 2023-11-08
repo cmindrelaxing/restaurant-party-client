@@ -1,4 +1,5 @@
 
+import { Helmet } from 'react-helmet';
 import toast from 'react-hot-toast';
 import '../index.css';
 
@@ -38,7 +39,11 @@ const AddProducts = () => {
     };
 
     return (
+
         <div className=" min-h-screen bg-base-200 flex items-center justify-center py-20 ">
+            <Helmet>
+                <title>Add Food - Collection</title> 
+            </Helmet>
             <div className="hero-content w-full flex-col-reverse md:flex-row justify-center">
 
                 <div className="text-center mb-2 mt-16 md:mt-0 md:w-[45%]">

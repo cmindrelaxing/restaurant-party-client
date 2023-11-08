@@ -1,6 +1,7 @@
 
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import toast from 'react-hot-toast';
 
 const Detail = ({details}) => {
@@ -22,6 +23,9 @@ const Detail = ({details}) => {
 
     return (
         <div className="py-20 space-y-5">
+            <Helmet>
+                <title>Food - Detail Page</title>
+            </Helmet>
             <div>
                 <img className='mx-auto' src={image} alt="" />
             </div>

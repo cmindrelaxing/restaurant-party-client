@@ -1,8 +1,9 @@
 
 // import { useLoaderData } from 'react-router-dom';
-import '../index.css';
+import { Helmet } from 'react-helmet';
 import FoodItem from '../components/FoodItem';
 import { useEffect, useState } from 'react';
+import '../index.css';
 
 const AllFoodItems = () => {
 
@@ -97,6 +98,11 @@ const AllFoodItems = () => {
 
     return (
         <div className=' pb-10 lg:pb-20 pt-10'>
+            
+            <Helmet>
+                <title>All Food - Collection</title>
+            </Helmet>
+
             <div className="area mx-auto">
                 <h1 className='text-center font-bold text-5xl dancing text-[#5dff33] mb-5'>Search Foods...</h1>
                 <div className='flex justify-center items-center w-1/2 mx-auto mb-14'>

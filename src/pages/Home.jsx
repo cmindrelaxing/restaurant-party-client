@@ -5,6 +5,7 @@ import WeAreParty from "../components/WeAreParty";
 import '../index.css';
 import Banner from "../components/Banner";
 import Review from "../components/Review";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
 
@@ -13,6 +14,10 @@ const Home = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Restaurant Party - Home</title>
+            </Helmet>
+
             <Banner></Banner>
             <DiscountFood></DiscountFood>
             <div className="my-20">
