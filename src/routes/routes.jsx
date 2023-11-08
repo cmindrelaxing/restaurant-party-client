@@ -11,6 +11,7 @@ import UpdateFood from "../pages/UpdateFood";
 import Details from "../pages/Details";
 import PrivateRoute from "./PrivateRoute";
 import Bookings from "../pages/Bookings";
+import ChoiceFood from "../pages/ChoiceFood";
 
 const routes = createBrowserRouter([
     {
@@ -31,6 +32,11 @@ const routes = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blog></Blog>
+            },
+            {
+                path: '/choices',
+                element: <ChoiceFood></ChoiceFood>,
+                loader: () => fetch('http://localhost:5000/foods')
             },
             {
                 path: '/addProducts',
