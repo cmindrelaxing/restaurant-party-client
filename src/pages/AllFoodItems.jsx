@@ -10,12 +10,13 @@ const AllFoodItems = () => {
     // console.log(foods);
 
     const [foods, setFoods] = useState(loadedFoods);
+    const [singlePage, setSinglePage] = useState(9);
     const [foodsCount, setFoodsCount] = useState();
     const {count} = foodsCount || {};
     console.log(count);
 
-    const itemsPerPage = 9;
-    const numberOfPages = Math.ceil(count / itemsPerPage);
+    // const singlePage = 9;
+    const numberOfPages = Math.ceil(count / singlePage);
     console.log(numberOfPages);
 
     // can i load more pages by for looping or Array
@@ -38,6 +39,13 @@ const AllFoodItems = () => {
             setFoodsCount(data);
         })
     }, []);
+
+    // onChange and see per page results
+    const handlePerPage = (e) => {
+        console.log(e.target.value);
+        const val = parseInt(e.target.value);
+        setSinglePage(val);
+    };
     
 
     // async function with pagination
@@ -77,8 +85,13 @@ const AllFoodItems = () => {
                 <div className='text-center mt-10 pagination'>
                     {
                         // pages?.map((page, index) => <button className='btn rounded-sm ml-1 mr-1 ' key={index}>{page}</button>)
-                        pages?.map((page, index) => <button className='text-base text-white bg-[#5dff33] hover:bg-orange-500 w-10 h-10 ml-1 mr-1 rounded-sm' key={index}>{page}</button>)
+                        pages?.map((page, index) => <button className='text-base text-white bg-gray-400 hover:bg-[#5dff33] w-10 h-10 ml-1 mr-1 rounded-sm' key={index}>{page}</button>)
                     }
+                    <select className=' ml-1 text-white bg-gray-400 h-[39px] outline-none px-3 rounded-sm' value={singlePage} onChange={handlePerPage} name="" id="">
+                        <option value="9">9</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                    </select>
                 </div>
             </div>
         </div>
