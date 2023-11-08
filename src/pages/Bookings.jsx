@@ -1,16 +1,29 @@
 
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BookingRow from "../components/BookingRow";
-import { useLoaderData } from "react-router";
+// import { useLoaderData } from "react-router";
 import Swal from "sweetalert2";
+import useAuth from "../hooks/useAuth";
+import axios from "axios";
 
 
 const Bookings = () => {
 
-    const loadBookings = useLoaderData();
-    const [bookings, setBookings] = useState(loadBookings);
+    // const loadBookings = useLoaderData();
+    // const [bookings, setBookings] = useState(loadBookings);
+    
+    const {user} = useAuth();
+    const [bookings, setBookings] = useState();
 
+    const url = `http://localhost:5000/bookings?${user?.email}`;
+
+    useEffect(() => {
+        axios.get(url)
+        .then(res => {
+            setBookings(res.data);
+        })
+    }, [url]);
 
     const bookingsBanner = {
         backgroundImage: 'url(https://i.ibb.co/LxrhK51/hero-bg.jpg)',
