@@ -55,13 +55,15 @@ const LoginPage = () => {
             const user = {email};
             toast.success('Login Successfully completed');
             
-            // navigate after login success
-            // navigate(location?.state ? location?.state : '/')
-
+            
             // get access token
-            axios.post('http://localhost:5000/jwt', user)
+            axios.post('http://localhost:5000/jwt', user, {withCredentials: true})
             .then(res => {
                 console.log(res.data);
+                if(res.data.success) {
+                    // navigate after login success
+                    navigate(location?.state ? location?.state : '/')
+                }
             })
         })
         .catch(err => {
