@@ -2,27 +2,26 @@
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import toast from 'react-hot-toast';
-import { Link } from 'react-router-dom';
 
 const Detail = ({details}) => {
 
     // console.log(details);
     const { name, price, image, category, description, made, country, rating } = details || {};
 
-    const confirmOrder = (e) => {
+    const orderNow = (e) => {
         e.preventDefault();
 
-        const form  = e.target;
-        const name = form.name.value;
-        const yourName = form.yourName.value;
-        const phone = form.phone.value;
-        const email = form.email.value;
-        const price = form.price.value;
-        const image = form.image.value;
-        const category = form.category.value;
-        const description = form.description.value;
-        const orderConfirmInfo = {name, yourName, phone, email, price, image, category, description};
-        console.log(orderConfirmInfo);
+        // const form  = e.target;
+        // const name = form.name.value;
+        // const yourName = form.yourName.value;
+        // const phone = form.phone.value;
+        // const email = form.email.value;
+        // const price = form.price.value;
+        // const image = form.image.value;
+        // const category = form.category.value;
+        // const description = form.description.value;
+        // const orderConfirmInfo = {name, yourName, phone, email, price, image, category, description};
+        // console.log(orderConfirmInfo);
 
         toast.success(`Confirmed successfully ${name}`)
     };
@@ -74,83 +73,71 @@ const Detail = ({details}) => {
                     </div> */}
                 </div>
                 {/* food form */}
-                <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100">
-                    <form onSubmit={confirmOrder} className="card-body" data-aos="flip-right">
-                        <h2 className="text-2xl font-semibold text-center dancing">Confirm Order</h2>
+                <form onSubmit={orderNow} className="card-body" data-aos="flip-right">
+                    <h2 className="text-2xl font-semibold text-center dancing">Update Food</h2>
 
-                        <div className='lg:flex md:justify-between gap-5'>
-                            <div className="form-control w-full">
-                            <label className="label">
-                                <span className="label-text dancing font-bold text-lg">Your Name</span>
-                            </label>
-                            <input type="text" placeholder="Your Name" name="yourName" className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
-                            </div>
+                    <div className="form-control">
+                    <label className="label">
+                        <span className="label-text dancing font-bold text-lg">Food Name</span>
+                    </label>
+                    <input type="text" placeholder="Name" name="name" defaultValue={name} className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
+                    </div>
 
-                            <div className="form-control w-full">
-                            <label className="label">
-                                <span className="label-text dancing font-bold text-lg">Phone Number</span>
-                            </label>
-                            <input type="text" placeholder="Your number" name="phone" className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
-                            </div>
-                        </div>
+                    <div className="form-control">
+                    <label className="label">
+                        <span className="label-text dancing font-bold text-lg">Food Price</span>
+                    </label>
+                    <input type="text" placeholder="Price" name="price" defaultValue={price} className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
+                    </div>
 
-                        <div className="form-control">
+                    <div className="form-control">
+                    <label className="label">
+                        <span className="label-text dancing font-bold text-lg">Food Image</span>
+                    </label>
+                    <input type="text" placeholder="Example: https://image.jpg" name="image" defaultValue={image} className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
+                    </div>
+
+                    <div className="form-control">
+                    <label className="label">
+                        <span className="label-text dancing font-bold text-lg">Food Category</span>
+                    </label>
+                    <input type="text" placeholder="Category..." name="category" defaultValue={category} className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
+                    </div>
+
+                    <div className="form-control">
+                    <label className="label">
+                        <span className="label-text dancing font-bold text-lg">Top Sell Food</span>
+                    </label>
+                    <input type="text" placeholder="Top or Hot" name="rating" defaultValue={rating} className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" />
+                    </div>
+
+                    <div className='md:flex md:justify-between gap-5'>
+                        <div className="form-control w-full">
                         <label className="label">
-                            <span className="label-text dancing font-bold text-lg">Your Email</span>
+                            <span className="label-text dancing font-bold text-lg">Made By</span>
                         </label>
-                        <input type="email" placeholder="Your email" name="email" className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
+                        <input type="text" placeholder="John" name="made" defaultValue={made} className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
                         </div>
 
-                        <div className="form-control">
+                        <div className="form-control w-full">
                         <label className="label">
-                            <span className="label-text dancing font-bold text-lg">Food Name</span>
+                            <span className="label-text dancing font-bold text-lg">Food Orign ( Country )</span>
                         </label>
-                        <input type="text" placeholder="Name" name="name" defaultValue={name} className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
+                        <input type="text" placeholder="Food Orign" name="country" defaultValue={country} className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
                         </div>
+                    </div>
 
-                        <div className="form-control">
-                        <label className="label">
-                            <span className="label-text dancing font-bold text-lg">Food Price</span>
-                        </label>
-                        <input type="text" placeholder="Price" name="price" defaultValue={price} className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
-                        </div>
+                    <div className="form-control">
+                    <label className="label">
+                        <span className="label-text dancing font-bold text-lg">Food Description</span>
+                    </label>
+                    <textarea  className=' text-xs rounded-lg border-2 focus:outline-none p-4 focus:border-[2px] focus:border-[#5dff33]' name="description" defaultValue={description} id="" placeholder='Description...' cols="30" rows="5"></textarea>
+                    </div>
 
-                        <div className="form-control">
-                        <label className="label">
-                            <span className="label-text dancing font-bold text-lg">Food Image</span>
-                        </label>
-                        <input type="text" placeholder="Example: https://image.jpg" name="image" defaultValue={image} className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
-                        </div>
-
-                        <div className="form-control">
-                        <label className="label">
-                            <span className="label-text dancing font-bold text-lg">Food Category</span>
-                        </label>
-                        <input type="text" placeholder="Category..." name="category" defaultValue={category} className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
-                        </div>
-
-                        <div className="form-control">
-                        <label className="label">
-                            <span className="label-text dancing font-bold text-lg">Top Sell Food</span>
-                        </label>
-                        <input type="text" placeholder="Top or Hot" name="rating" defaultValue={rating} className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" />
-                        </div>
-
-                        <div className="form-control">
-                        <label className="label">
-                            <span className="label-text dancing font-bold text-lg">Food Description</span>
-                        </label>
-                        <textarea  className=' text-xs rounded-lg border-2 focus:outline-none p-4 focus:border-[2px] focus:border-[#5dff33]' name="description" defaultValue={description} id="" placeholder='Description...' cols="30" rows="5"></textarea>
-                        </div>
-
-                        <div className="form-control mt-6">
-                        <Link>
-                        <button className="btn text-white py-2 bg-[#5dff33] capitalize hover:bg-black hover:text-white rounded-full"> Confirm Order </button>
-                        </Link>
-                        </div>
-
-                    </form>
-                </div>
+                    <div className="form-control mt-6">
+                    <button className="btn text-white py-2 px-5 bg-[#5dff33] capitalize hover:bg-black hover:text-white rounded-full"> Add Update Collection </button>
+                    </div>
+                </form>
             </div>
         </div>
     );
