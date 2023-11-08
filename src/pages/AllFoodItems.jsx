@@ -1,15 +1,16 @@
 
-import { useLoaderData } from 'react-router-dom';
+// import { useLoaderData } from 'react-router-dom';
 import '../index.css';
 import FoodItem from '../components/FoodItem';
 import { useEffect, useState } from 'react';
 
 const AllFoodItems = () => {
 
-    const loadedFoods = useLoaderData();
+    // const loadedFoods = useLoaderData();
     // console.log(foods);
+    // const [foods, setFoods] = useState(loadedFoods);
 
-    const [foods, setFoods] = useState(loadedFoods);
+    const [foods, setFoods] = useState();
     const [singlePage, setSinglePage] = useState(9);
     const [currentPage, setCurrentPage] = useState(0);
     const [foodsCount, setFoodsCount] = useState();
@@ -31,6 +32,15 @@ const AllFoodItems = () => {
     // console.log(pages);
 
 
+    useEffect(() => {
+        fetch(`http://localhost:5000/foods?page=${currentPage}&size=${singlePage}`)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            setFoods(data);
+        })
+    }, [currentPage, singlePage]);
+
     // pagination for foods count
     useEffect(() => {
         fetch(`http://localhost:5000/foodsCount`)
@@ -40,6 +50,7 @@ const AllFoodItems = () => {
             setFoodsCount(data);
         })
     }, []);
+    
 
     // onChange and see per page results
     const handlePerPage = (e) => {
