@@ -48,6 +48,19 @@ const AllFoodItems = () => {
         setSinglePage(val);
         setCurrentPage(0);
     };
+
+    // prev and next buttons
+    const prevButton = () => {
+        if(currentPage > 0) {
+            setCurrentPage(currentPage - 1);
+        }
+    };
+
+    const nextButton = () => {
+        if(currentPage < pages.length - 1) {
+            setCurrentPage(currentPage + 1);
+        }
+    };
     
 
     // async function with pagination
@@ -72,7 +85,7 @@ const AllFoodItems = () => {
 
 
     return (
-        <div className='pb-20 pt-10'>
+        <div className=' pb-10 lg:pb-20 pt-10'>
             <div className="area mx-auto">
                 <h1 className='text-center font-bold text-5xl dancing text-[#5dff33] mb-5'>Search Foods...</h1>
                 <div className='flex justify-center items-center w-1/2 mx-auto mb-14'>
@@ -85,19 +98,20 @@ const AllFoodItems = () => {
                     }
                 </div>
                 <div className='text-center mt-10 pagination'>
+                    <button onClick={prevButton} className='w-20 h-10 mb-4 lg:mb-0 '>Prev</button>
                     {
-                        // pages?.map((page, index) => <button className='btn rounded-sm ml-1 mr-1 ' key={index}>{page}</button>)
                         pages?.map((page, index) => <button
-                        className={currentPage === page ? 'selected'  : ''}
+                        className={currentPage === page ? 'selected w-10 h-10 mb-4 lg:mb-0 '  : 'w-10 h-10 mb-4 lg:mb-0 '}
                         onClick={ () => setCurrentPage(page) }
                         key={index}>{page + 1}
                         </button>)
                     }
-                    <select className=' ml-1 text-white bg-gray-400 hover:bg-orange-500 h-[39px] outline-none px-3 rounded-sm' value={singlePage} onChange={handlePerPage} name="" id="">
+                    <select className=' mb-4 lg:mb-0 ml-1 mr-1 text-white h-[39px] outline-none px-2' value={singlePage} onChange={handlePerPage} name="" id="">
                         <option value="9">9</option>
                         <option value="20">20</option>
                         <option value="50">50</option>
                     </select>
+                    <button onClick={nextButton} className='w-20 h-10 mb-4 lg:mb-0'>Next</button>
                 </div>
             </div>
         </div>
