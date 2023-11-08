@@ -10,6 +10,7 @@ import SignupPage from "../pages/SignupPage";
 import UpdateFood from "../pages/UpdateFood";
 import Details from "../pages/Details";
 import PrivateRoute from "./PrivateRoute";
+import Bookings from "../pages/Bookings";
 
 const routes = createBrowserRouter([
     {
@@ -44,6 +45,11 @@ const routes = createBrowserRouter([
                 path: '/foods/:id',
                 element: <PrivateRoute><Details></Details></PrivateRoute>,
                 loader: () => fetch('http://localhost:5000/foods')
+            },
+            {
+                path: '/bookings',
+                element: <Bookings></Bookings>,
+                loader: () => fetch('http://localhost:5000/bookings')
             },
             {
                 path: '/signup',

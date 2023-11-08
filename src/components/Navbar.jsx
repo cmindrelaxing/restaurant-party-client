@@ -51,6 +51,15 @@ const Navbar = () => {
             >
             Add Product
             </NavLink>
+
+            <NavLink
+            to="/bookings"
+            className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "bg-[#5dff33] text-black py-1 px-7 rounded-tl-xl rounded-br-xl   hover:text-white hover:bg-black hover:rounded-tl-none hover:rounded-br-none hover:rounded-tr-xl hover:rounded-bl-xl " : " "
+            }
+            >
+            My Order
+            </NavLink>
             
         </>
 

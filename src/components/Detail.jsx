@@ -6,7 +6,7 @@ import toast from 'react-hot-toast';
 const Detail = ({details}) => {
 
     // console.log(details);
-    const { name, price, image, category, description, made, country, rating } = details || {};
+    const { name, price, image, category, description, made, country, rating, date } = details || {};
 
     const orderNow = (e) => {
         e.preventDefault();
@@ -20,8 +20,9 @@ const Detail = ({details}) => {
         const made = form.made.value;
         const country = form.country.value;
         const rating = form.rating.value;
+        const date = form.date.value;
 
-        const productInfo = {name, price, image, category, description, made, country, rating};
+        const productInfo = {name, price, image, category, description, made, country, rating, date};
         console.log(productInfo);
 
         // add a new item
@@ -113,6 +114,13 @@ const Detail = ({details}) => {
                         <span className="label-text dancing font-bold text-lg">Food Image</span>
                     </label>
                     <input type="text" placeholder="Example: https://image.jpg" name="image" defaultValue={image} className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
+                    </div>
+
+                    <div className="form-control">
+                    <label className="label">
+                        <span className="label-text dancing font-bold text-lg">Order Date</span>
+                    </label>
+                    <input type="date" placeholder="Order date" name="date" defaultValue={date} className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
                     </div>
 
 
