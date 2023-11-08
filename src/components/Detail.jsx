@@ -76,19 +76,22 @@ const Detail = ({details}) => {
                 <form onSubmit={orderNow} className="card-body" data-aos="flip-right">
                     <h2 className="text-2xl font-semibold text-center dancing">Update Food</h2>
 
-                    <div className="form-control">
-                    <label className="label">
-                        <span className="label-text dancing font-bold text-lg">Food Name</span>
-                    </label>
-                    <input type="text" placeholder="Name" name="name" defaultValue={name} className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
+                    <div className='md:flex md:justify-between gap-5'>
+                        <div className="form-control w-full">
+                        <label className="label">
+                            <span className="label-text dancing font-bold text-lg">Food Name</span>
+                        </label>
+                        <input type="text" placeholder="name" name="name" defaultValue={name} className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
+                        </div>
+
+                        <div className="form-control w-full">
+                        <label className="label">
+                            <span className="label-text dancing font-bold text-lg">Food Price</span>
+                        </label>
+                        <input type="text" placeholder="Price" name="price" defaultValue={name} className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
+                        </div>
                     </div>
 
-                    <div className="form-control">
-                    <label className="label">
-                        <span className="label-text dancing font-bold text-lg">Food Price</span>
-                    </label>
-                    <input type="text" placeholder="Price" name="price" defaultValue={price} className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
-                    </div>
 
                     <div className="form-control">
                     <label className="label">
@@ -97,19 +100,23 @@ const Detail = ({details}) => {
                     <input type="text" placeholder="Example: https://image.jpg" name="image" defaultValue={image} className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
                     </div>
 
-                    <div className="form-control">
-                    <label className="label">
-                        <span className="label-text dancing font-bold text-lg">Food Category</span>
-                    </label>
-                    <input type="text" placeholder="Category..." name="category" defaultValue={category} className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
+
+                    <div className='md:flex md:justify-between gap-5'>
+                        <div className="form-control w-full">
+                        <label className="label">
+                            <span className="label-text dancing font-bold text-lg">Food Category</span>
+                        </label>
+                        <input type="text" placeholder="Category" name="category" defaultValue={category} className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
+                        </div>
+
+                        <div className="form-control w-full">
+                        <label className="label">
+                            <span className="label-text dancing font-bold text-lg">Top Sell Food</span>
+                        </label>
+                        <input type="text" placeholder="Rating" name="rating" defaultValue={rating} className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
+                        </div>
                     </div>
 
-                    <div className="form-control">
-                    <label className="label">
-                        <span className="label-text dancing font-bold text-lg">Top Sell Food</span>
-                    </label>
-                    <input type="text" placeholder="Top or Hot" name="rating" defaultValue={rating} className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" />
-                    </div>
 
                     <div className='md:flex md:justify-between gap-5'>
                         <div className="form-control w-full">
