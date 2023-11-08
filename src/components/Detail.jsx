@@ -11,19 +11,34 @@ const Detail = ({details}) => {
     const orderNow = (e) => {
         e.preventDefault();
 
-        // const form  = e.target;
-        // const name = form.name.value;
-        // const yourName = form.yourName.value;
-        // const phone = form.phone.value;
-        // const email = form.email.value;
-        // const price = form.price.value;
-        // const image = form.image.value;
-        // const category = form.category.value;
-        // const description = form.description.value;
-        // const orderConfirmInfo = {name, yourName, phone, email, price, image, category, description};
-        // console.log(orderConfirmInfo);
+        const form  = e.target;
+        const name = form.name.value;
+        const price = form.price.value;
+        const image = form.image.value;
+        const category = form.category.value;
+        const description = form.description.value;
+        const made = form.made.value;
+        const country = form.country.value;
+        const rating = form.rating.value;
 
-        toast.success(`Confirmed successfully ${name}`)
+        const productInfo = {name, price, image, category, description, made, country, rating};
+        console.log(productInfo);
+
+        // add a new item
+        fetch('http://localhost:5000/bookings', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(productInfo),
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if(data.insertedId) {
+                toast.success(`Order confirm successfully ${name}`)
+            }
+        })
     };
 
 
@@ -88,7 +103,7 @@ const Detail = ({details}) => {
                         <label className="label">
                             <span className="label-text dancing font-bold text-lg">Food Price</span>
                         </label>
-                        <input type="text" placeholder="Price" name="price" defaultValue={name} className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
+                        <input type="text" placeholder="Price" name="price" defaultValue={price} className=" text-xs focus:outline-none focus:border-[2px] focus:border-[#5dff33]  input input-bordered" required />
                         </div>
                     </div>
 
@@ -142,7 +157,7 @@ const Detail = ({details}) => {
                     </div>
 
                     <div className="form-control mt-6">
-                    <button className="btn text-white py-2 px-5 bg-[#5dff33] capitalize hover:bg-black hover:text-white rounded-full"> Add Update Collection </button>
+                    <button className="btn text-white py-2 px-5 bg-[#5dff33] capitalize hover:bg-black hover:text-white rounded-full"> Confirm Order </button>
                     </div>
                 </form>
             </div>
