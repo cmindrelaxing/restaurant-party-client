@@ -11,6 +11,7 @@ const AllFoodItems = () => {
 
     const [foods, setFoods] = useState(loadedFoods);
     const [singlePage, setSinglePage] = useState(9);
+    const [currentPage, setCurrentPage] = useState(0);
     const [foodsCount, setFoodsCount] = useState();
     const {count} = foodsCount || {};
     console.log(count);
@@ -45,6 +46,7 @@ const AllFoodItems = () => {
         console.log(e.target.value);
         const val = parseInt(e.target.value);
         setSinglePage(val);
+        setCurrentPage(0);
     };
     
 
@@ -85,9 +87,13 @@ const AllFoodItems = () => {
                 <div className='text-center mt-10 pagination'>
                     {
                         // pages?.map((page, index) => <button className='btn rounded-sm ml-1 mr-1 ' key={index}>{page}</button>)
-                        pages?.map((page, index) => <button className='text-base text-white bg-gray-400 hover:bg-[#5dff33] w-10 h-10 ml-1 mr-1 rounded-sm' key={index}>{page}</button>)
+                        pages?.map((page, index) => <button
+                        className={currentPage === page ? 'selected'  : ''}
+                        onClick={ () => setCurrentPage(page) }
+                        key={index}>{page + 1}
+                        </button>)
                     }
-                    <select className=' ml-1 text-white bg-gray-400 h-[39px] outline-none px-3 rounded-sm' value={singlePage} onChange={handlePerPage} name="" id="">
+                    <select className=' ml-1 text-white bg-gray-400 hover:bg-orange-500 h-[39px] outline-none px-3 rounded-sm' value={singlePage} onChange={handlePerPage} name="" id="">
                         <option value="9">9</option>
                         <option value="20">20</option>
                         <option value="50">50</option>

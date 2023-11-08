@@ -33,3 +33,28 @@ button.other_btn:hover i{
 .area {
   max-width: 1200px;
 }
+
+.pagination button {
+  font-size: 16px;
+  background: gray;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.pagination select {
+  background: gray;
+  border-radius: 5px;
+}
+
+.pagination button:hover, .pagination select:hover {
+  background: orange;
+}
+
+.pagination .selected {
+  background-color: orange;
+  color: white;
+}
