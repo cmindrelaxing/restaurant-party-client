@@ -1,12 +1,15 @@
 
 
+import { useState } from "react";
 import BookingRow from "../components/BookingRow";
 import { useLoaderData } from "react-router";
+import Swal from "sweetalert2";
 
 
 const Bookings = () => {
 
-    const bookings = useLoaderData();
+    const loadBookings = useLoaderData();
+    const [bookings, setBookings] = useState(loadBookings);
 
 
     const bookingsBanner = {
@@ -16,6 +19,39 @@ const Bookings = () => {
         backgroundPosition: 'center center',
         width: '100%',
         height: '300px',
+    };
+
+
+    const handleDelete = id => {
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+            if (result.isConfirmed) {
+    
+
+            fetch(`http://localhost:5000/bookings/${id}`)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if(data.deletedCount > 0) {
+                    Swal.fire({
+                    title: "Deleted!",
+                    text: "Your file has been deleted.",
+                    icon: "success"
+                    });
+                    const remaining = bookings?.filter(booking => booking._id !== id);
+                    setBookings(remaining);
+                }
+            })
+            }
+        });
     };
 
 
@@ -58,7 +94,7 @@ const Bookings = () => {
                         bookings?.map((booking, index) => <BookingRow 
                         key={index} 
                         booking={booking}
-                        // handleDelete={handleDelete}
+                        handleDelete={handleDelete}
                         // handleBookingConfirm={handleBookingConfirm}
                         ></BookingRow>)
                     }

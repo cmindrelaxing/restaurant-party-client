@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 // import toast from "react-hot-toast";
 
-const BookingRow = ({booking, handleDelete, handleBookingConfirm}) => {
+const BookingRow = ({booking, handleDelete}) => {
 
     const {_id, name, rating, date, category, image, price, status} = booking || {};
 
