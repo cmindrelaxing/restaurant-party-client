@@ -16,11 +16,11 @@ const AllFoodItems = () => {
     const [currentPage, setCurrentPage] = useState(0);
     const [foodsCount, setFoodsCount] = useState();
     const {count} = foodsCount || {};
-    console.log(count);
+    // console.log(count);
 
     // const singlePage = 9;
     const numberOfPages = Math.ceil(count / singlePage);
-    console.log(numberOfPages);
+    // console.log(numberOfPages);
 
     // can i load more pages by for looping or Array
     const pages = [];
@@ -37,7 +37,7 @@ const AllFoodItems = () => {
         fetch(`http://localhost:5000/foods?page=${currentPage}&size=${singlePage}`)
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+            // console.log(data);
             setFoods(data);
         })
     }, [currentPage, singlePage]);
@@ -47,7 +47,7 @@ const AllFoodItems = () => {
         fetch(`http://localhost:5000/foodsCount`)
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+            // console.log(data);
             setFoodsCount(data);
         })
     }, []);
@@ -55,7 +55,7 @@ const AllFoodItems = () => {
 
     // onChange and see per page results
     const handlePerPage = (e) => {
-        console.log(e.target.value);
+        // console.log(e.target.value);
         const val = parseInt(e.target.value);
         setSinglePage(val);
         setCurrentPage(0);
@@ -73,27 +73,6 @@ const AllFoodItems = () => {
             setCurrentPage(currentPage + 1);
         }
     };
-    
-
-    // async function with pagination
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         try {
-    //             const response = await fetch("http://localhost:5000/foods");
-    //             if (response.ok) {
-    //                 const data = await response.json();
-    //                 console.log(data);
-    //                 setFoodsCount(data);
-    //             } else {
-    //                 console.error("Failed to fetch data");
-    //             }
-    //         } catch (error) {
-    //             console.error("An error occurred: ", error);
-    //         }
-    //     };
-    
-    //     fetchData();
-    // }, []);
 
 
     return (
