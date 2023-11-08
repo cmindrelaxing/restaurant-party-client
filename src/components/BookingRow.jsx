@@ -15,9 +15,10 @@ const BookingRow = ({booking, handleDelete}) => {
             </th>
             <td>
                 <div className="avatar">
-                    <div className="mask rounded-lg w-24 h-20">
+                    <div className="mask rounded-lg w-24 ">
                         {
                             image && <img
+                            className="rounded-full"
                             src={image}
                             alt="Avatar Tailwind CSS Component"
                             />
