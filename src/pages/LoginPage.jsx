@@ -4,7 +4,6 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import '../index.css';
 import useAuth from "../hooks/useAuth";
-import { Helmet } from "react-helmet";
 import axios from "axios";
 
 
@@ -57,7 +56,7 @@ const LoginPage = () => {
             
             
             // get access token
-            axios.post('http://localhost:5000/jwt', user, {withCredentials: true})
+            axios.post('https://restaurant-management-server-g3evb8yb5.vercel.app/jwt', user, {withCredentials: true})
             .then(res => {
                 console.log(res.data);
                 if(res.data.success) {
@@ -105,9 +104,6 @@ const LoginPage = () => {
 
     return (
         <div className=" min-h-screen bg-base-200 flex items-center justify-center py-10 ">
-            <Helmet>
-                <title>Login - now</title>
-            </Helmet>
             <div className="hero-content w-full flex-col-reverse md:flex-row justify-center">
                 <div className="text-center mb-2">
                     {/* <h1 className="text-5xl font-bold mb-14">Signup now!</h1> */}

@@ -1,14 +1,10 @@
 
 
-import { Helmet } from 'react-helmet';
 import  '../index.css';
 
 const Blog = () => {
     return (
         <div className='pt-10 py-20'>
-            <Helmet>
-                <title>Blog - Collection</title>
-            </Helmet>
             <div className="area mx-auto md:px-10">
                 {/* Blog ques: no: 1 */}
                 <section>

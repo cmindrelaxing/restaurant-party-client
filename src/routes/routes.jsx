@@ -22,12 +22,12 @@ const routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/foods')
+                loader: () => fetch('https://restaurant-management-server-g3evb8yb5.vercel.app/foods')
             },
             {
                 path: '/allFoodItems',
                 element: <PrivateRoute><AllFoodItems></AllFoodItems></PrivateRoute>,
-                // loader: () => fetch(`http://localhost:5000/foods`)
+                // loader: () => fetch(`https://restaurant-management-server-g3evb8yb5.vercel.app/foods`)
             },
             {
                 path: '/blog',
@@ -36,7 +36,7 @@ const routes = createBrowserRouter([
             {
                 path: '/choices',
                 element: <ChoiceFood></ChoiceFood>,
-                loader: () => fetch('http://localhost:5000/foods')
+                loader: () => fetch('https://restaurant-management-server-g3evb8yb5.vercel.app/foods')
             },
             {
                 path: '/addProducts',
@@ -45,17 +45,17 @@ const routes = createBrowserRouter([
             {
                 path: '/updateFood/:id',
                 element: <UpdateFood></UpdateFood>,
-                loader: ({params}) => fetch(`http://localhost:5000/foods/${params.id}`)
+                loader: ({params}) => fetch(`https://restaurant-management-server-g3evb8yb5.vercel.app/foods/${params.id}`)
             },
             {
                 path: '/foods/:id',
                 element: <PrivateRoute><Details></Details></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/foods')
+                loader: () => fetch('https://restaurant-management-server-g3evb8yb5.vercel.app/foods')
             },
             {
                 path: '/bookings',
                 element: <PrivateRoute><Bookings></Bookings></PrivateRoute>,
-                // loader: () => fetch('http://localhost:5000/bookings')
+                // loader: () => fetch(`https://restaurant-management-server-g3evb8yb5.vercel.app/bookings`)
             },
             {
                 path: '/signup',

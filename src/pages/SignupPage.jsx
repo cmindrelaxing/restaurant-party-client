@@ -2,7 +2,6 @@ import '../index.css';
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from '../hooks/useAuth';
 import toast from 'react-hot-toast';
-import { Helmet } from 'react-helmet';
 
 
 
@@ -89,9 +88,6 @@ const SignupPage = () => {
 
     return (
         <div className=" min-h-screen bg-base-200 flex items-center justify-center py-10 ">
-            <Helmet>
-                <title>Signup - now</title>
-            </Helmet>
             <div className="hero-content w-full flex-col-reverse md:flex-row justify-center">
 
                 <div className="text-center mb-2 mt-16 md:mt-0">

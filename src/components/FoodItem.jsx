@@ -22,7 +22,7 @@ const FoodItem = ({food, foods, setFoods}) => {
           }).then((result) => {
             if (result.isConfirmed) {
             // delete by _id
-            fetch(`http://localhost:5000/foods/${_id}`, {
+            fetch(`https://restaurant-management-server-g3evb8yb5.vercel.app/foods/${_id}`, {
                 method: "DELETE",
             })
             .then(res => res.json())

@@ -2,28 +2,28 @@
 
 import { useEffect, useState } from "react";
 import BookingRow from "../components/BookingRow";
-// import { useLoaderData } from "react-router";
 import Swal from "sweetalert2";
-import useAuth from "../hooks/useAuth";
+import { useLoaderData } from "react-router";
 import axios from "axios";
 
 
 const Bookings = () => {
 
-    // const loadBookings = useLoaderData();
-    // const [bookings, setBookings] = useState(loadBookings);
+    const loadBookings = useLoaderData();
+    // console.log(loadBookings);
+    const [bookings, setBookings] = useState(loadBookings);
     
-    const {user} = useAuth();
-    const [bookings, setBookings] = useState();
+    // const {user} = useAuth();
+    // const [bookings, setBookings] = useState();
 
-    const url = `http://localhost:5000/bookings?${user?.email}`;
+    // const url = `https://restaurant-management-server-g3evb8yb5.vercel.app/bookings`;
 
     useEffect(() => {
-        axios.get(url, {withCredentials: true})
+        axios.get('https://restaurant-management-server-g3evb8yb5.vercel.app/bookings', {withCredentials: true})
         .then(res => {
             setBookings(res.data);
         })
-    }, [url]);
+    }, []);
 
     const bookingsBanner = {
         backgroundImage: 'url(https://i.ibb.co/LxrhK51/hero-bg.jpg)',
@@ -49,7 +49,7 @@ const Bookings = () => {
             if (result.isConfirmed) {
     
 
-            fetch(`http://localhost:5000/bookings/${id}`, {
+            fetch(`https://restaurant-management-server-g3evb8yb5.vercel.app/bookings/${id}`, {
                 method: 'DELETE',
             })
             .then(res => res.json())

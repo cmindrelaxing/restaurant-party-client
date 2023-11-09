@@ -1,6 +1,5 @@
 
 import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
 import toast from 'react-hot-toast';
 
 const Detail = ({details}) => {
@@ -26,7 +25,7 @@ const Detail = ({details}) => {
         console.log(productInfo);
 
         // add a new item
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://restaurant-management-server-g3evb8yb5.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -47,9 +46,6 @@ const Detail = ({details}) => {
 
     return (
         <div className="py-20">
-            <Helmet>
-                <title>Food - Detail Page</title>
-            </Helmet>
             <div>
                 <img className='mx-auto' src={image} alt="" />
             </div>

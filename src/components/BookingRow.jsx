@@ -31,7 +31,7 @@ const BookingRow = ({booking, handleDelete}) => {
                 {category}
             </td>
             <td>
-                {price}
+                $ {price}
             </td>
             <td>{rating}</td>
             <td>{date}</td>

@@ -3,7 +3,6 @@
 import { useLoaderData } from 'react-router-dom';
 import '../index.css';
 import toast from 'react-hot-toast';
-import { Helmet } from 'react-helmet';
 
 const UpdateFood = () => {
 
@@ -28,7 +27,7 @@ const UpdateFood = () => {
         console.log(updateFood);
 
         // add a new item
-        fetch(`http://localhost:5000/foods/${_id}`, {
+        fetch(`https://restaurant-management-server-g3evb8yb5.vercel.app/foods/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
@@ -46,9 +45,6 @@ const UpdateFood = () => {
 
     return (
         <div className=" min-h-screen bg-base-200 flex items-center justify-center py-20 ">
-            <Helmet>
-                <title>Update Food - Collection</title>
-            </Helmet>
             <div className="hero-content w-full flex-col-reverse md:flex-row justify-center">
 
                 <div className="text-center mb-2 mt-16 md:mt-0 md:w-[45%]">

@@ -1,6 +1,5 @@
 
 // import { useLoaderData } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
 import FoodItem from '../components/FoodItem';
 import { useEffect, useState } from 'react';
 import '../index.css';
@@ -34,7 +33,7 @@ const AllFoodItems = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/foods?page=${currentPage}&size=${singlePage}`)
+        fetch(`https://restaurant-management-server-g3evb8yb5.vercel.app/foods?page=${currentPage}&size=${singlePage}`)
         .then(res => res.json())
         .then(data => {
             // console.log(data);
@@ -44,7 +43,7 @@ const AllFoodItems = () => {
 
     // pagination for foods count
     useEffect(() => {
-        fetch(`http://localhost:5000/foodsCount`)
+        fetch(`https://restaurant-management-server-g3evb8yb5.vercel.app/foodsCount`)
         .then(res => res.json())
         .then(data => {
             // console.log(data);
@@ -77,10 +76,6 @@ const AllFoodItems = () => {
 
     return (
         <div className=' pb-10 lg:pb-20 pt-10'>
-            
-            <Helmet>
-                <title>All Food - Collection</title>
-            </Helmet>
 
             <div className="area mx-auto">
                 <h2 className='text-center dancing font-bold text-3xl  mb-5'>Search..</h2>
