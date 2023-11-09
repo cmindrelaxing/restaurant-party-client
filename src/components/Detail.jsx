@@ -46,7 +46,7 @@ const Detail = ({details}) => {
 
     return (
         <div className="py-20">
-            <div>
+            <div  >
                 <img className='mx-auto' src={image} alt="" />
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 justify-center gap-5 px-4 mt-20 md:px-5'>

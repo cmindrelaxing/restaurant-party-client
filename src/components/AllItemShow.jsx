@@ -9,7 +9,7 @@ const AllItemShow = ({food}) => {
 
     return (
         <div>
-            <div className='box_hover bg-[#222831] text-white rounded-lg md:rounded-xl rounded-bl-lg rounded-br-lg '>
+            <div className='box_hover bg-[#222831] text-white rounded-lg md:rounded-xl rounded-bl-lg rounded-br-lg ' data-aos="zoom-in-up">
                 <div className=' relative img_box bg-[#F1F2F3] py-10 rounded-tl-lg rounded-tr-lg rounded-bl-3xl w-full'>
                     <img className='mx-auto w-[150px] h-[150px]' src={image} alt="" />
                     {

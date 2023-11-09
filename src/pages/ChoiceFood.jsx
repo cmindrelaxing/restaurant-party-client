@@ -3,6 +3,7 @@
 import { useLoaderData } from 'react-router';
 import '../index.css';
 import ChoiceOne from '../components/ChoiceOne';
+import { Helmet } from 'react-helmet';
 
 const ChoiceFood = () => {
 
@@ -11,6 +12,11 @@ const ChoiceFood = () => {
 
     return (
         <div className=' py-10'>
+
+            <Helmet>
+                <title>Favorite Food - Colledtion</title>
+            </Helmet>
+
             <div>
                 <h2 className='text-center dancing font-bold text-3xl  mb-5'>Search..</h2>
                 <div className='flex justify-center items-center w-1/2 mx-auto mb-14'>

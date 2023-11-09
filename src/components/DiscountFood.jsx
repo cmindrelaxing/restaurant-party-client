@@ -6,7 +6,7 @@ const DiscountFood = () => {
     return (
         <div className='my-10'>
             <div className='area grid grid-cols-1 lg:grid-cols-2 gap-5 mx-auto px-4 lg:px-0'>
-                <div className='bg-[#222831] box_hover md:flex gap-8 p-8 items-center rounded-lg space-y-5 md:space-y-0'>
+                <div className='bg-[#222831] box_hover md:flex gap-8 p-8 items-center rounded-lg space-y-5 md:space-y-0' data-aos="fade-up-right">
                     <div className=' img_box border-[6px] border-[#5dff33] w-[175px] h-[175px] mx-auto md:mx-0 rounded-full overflow-hidden'>
                         <img className=' mx-auto md:mx-0 w-[175px] h-[175px] rounded-full' src="https://i.ibb.co/4WqG4BZ/o1.jpg" alt="" />
                     </div>
@@ -20,7 +20,7 @@ const DiscountFood = () => {
                         </div>
                     </div>
                 </div>
-                <div className='bg-[#222831] box_hover md:flex gap-8 p-8 items-center rounded-lg space-y-5 md:space-y-0'>
+                <div className='bg-[#222831] box_hover md:flex gap-8 p-8 items-center rounded-lg space-y-5 md:space-y-0' data-aos="fade-up-left">
                     <div className=' img_box border-[6px] border-[#5dff33] w-[175px] h-[175px] mx-auto md:mx-0 rounded-full overflow-hidden'>
                         <img className=' mx-auto md:mx-0 w-[175px] h-[175px] rounded-full' src="https://i.ibb.co/Qm7LPcd/o2.jpg" alt="" />
                     </div>

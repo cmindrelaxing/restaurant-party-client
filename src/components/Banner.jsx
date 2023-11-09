@@ -13,11 +13,11 @@ const Banner = () => {
           />
           <div className="absolute flex items-center px-5 md:px-0 lg:px-0 md:pl-10 lg:pl-10 justify-end  h-full bottom-0 gap-3 lg:gap-5 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00) 100%)]">
             <div className=" space-y-3 md:space-y-5 lg:space-y-7">
-              <h2 className="text-white text-3xl md:text-5xl lg:text-6xl font-bold dancing">Fast Food Restaurant</h2>
-              <p className=" text-white text-sm md:text-base  md:w-[522px]"><span>Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.</span></p>
+              <h2 className="text-white text-3xl md:text-5xl lg:text-6xl font-bold dancing" data-aos="fade-up-right">Fast Food Restaurant</h2>
+              <p className=" text-white text-sm md:text-base  md:w-[522px]" data-aos="fade-up-right"><span>Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.</span></p>
               <div>
                 <Link>
-                    <button className="bg-[#5dff33] text-white py-2 font-semibold hover:bg-orange-400 hover:text-white px-6 md:px-8 rounded-full">Order Now</button>
+                    <button className="bg-[#5dff33] text-white py-2 font-semibold hover:bg-orange-400 hover:text-white px-6 md:px-8 rounded-full" data-aos="fade-up-right">Order Now</button>
                 </Link>
               </div>
             </div>

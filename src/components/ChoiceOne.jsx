@@ -7,7 +7,7 @@ const ChoiceOne = ({food}) => {
 
     return (
         <div className="">
-            <div className="bg-[#222831]">
+            <div className="bg-[#222831]" data-aos="zoom-in-up">
                 <div className="py-10 bg-[#F1F2F3]">
                     <img className="w-[150px] h-[150px] mx-auto" src={image} alt="" />
                 </div>

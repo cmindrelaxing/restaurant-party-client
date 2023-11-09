@@ -5,6 +5,7 @@ import BookingRow from "../components/BookingRow";
 import Swal from "sweetalert2";
 import { useLoaderData } from "react-router";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 
 const Bookings = () => {
@@ -73,6 +74,10 @@ const Bookings = () => {
     return (
         <div>
             {/* <h2 className="text-5xl">Your Bookings: {bookings?.length}</h2> */}
+
+            <Helmet>
+                <title>My Order - Food</title>
+            </Helmet>
 
             {/* bookings banner */}
             <div style={bookingsBanner} className="relative my-5" >
