@@ -10,7 +10,7 @@ const Blog = () => {
             <Helmet>
                 <title>Blog - Page</title>
             </Helmet>
-            <div className="area mx-auto md:px-10">
+            <div className="area mx-auto px-4 md:px-10">
                 {/* Blog ques: no: 1 */}
                 <section>
                     <img src="" alt="" />

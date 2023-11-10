@@ -137,8 +137,8 @@ const SignupPage = () => {
                         <div>
                             <h2 className="text-2xl font-semibold text-center dancing">Signup with</h2>
                             <div className="flex justify-between items-center mt-5 gap-3">
-                                <button onClick={googleSignUp} className="flex items-center font-medium bg-[#5dff33] text-white py-2 hover:bg-black hover:text-white px-8 rounded-full"><i className='mr-2 bx bxl-google text-black' ></i><span className="text-black">G</span>oogle</button>
-                                <button onClick={githubSignUp} className="flex items-center font-medium bg-[#5dff33] text-white py-2 hover:bg-black hover:text-white px-8 rounded-full"><i className='mr-2 bx bxl-github text-black' ></i><span className="text-black">G</span>ithub</button>
+                                <button onClick={googleSignUp} className="flex items-center font-medium bg-[#5dff33] text-white py-2 hover:bg-black hover:text-white px-8 rounded-full"><i className=' bx bxl-google text-black' ></i><span className="text-black">G</span>oogle</button>
+                                <button onClick={githubSignUp} className="flex items-center font-medium bg-[#5dff33] text-white py-2 hover:bg-black hover:text-white px-8 rounded-full"><i className=' bx bxl-github text-black' ></i><span className="text-black">G</span>ithub</button>
                             </div>
                         </div>
                     </form>

@@ -31,7 +31,7 @@ const ChoiceFood = () => {
         }
         setFindSearchFood(searchMathces);
     };
-    console.log(findSearchFood);
+    // console.log(findSearchFood);
     // console.log(isNotFound);
 
     return (

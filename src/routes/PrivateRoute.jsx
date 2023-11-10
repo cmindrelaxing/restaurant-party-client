@@ -10,7 +10,9 @@ const PrivateRoute = ({children}) => {
     // console.log(location.pathname);
 
     if(loading) {
-        return <span className="loading loading-spinner text-success"></span>;
+        return <div className='h-screen flex justify-center items-center'>
+            <span className="loading loading-spinner text-success"></span>
+        </div>;
     }
 
     if(user) {

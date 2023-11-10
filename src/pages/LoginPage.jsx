@@ -136,8 +136,8 @@ const LoginPage = () => {
                         <div>
                             <h2 className="text-2xl font-semibold text-center dancing">Login with</h2>
                             <div className="flex justify-between items-center mt-5 gap-3">
-                                <button onClick={googleSignIn} className="flex items-center font-medium bg-[#5dff33] text-white py-2 hover:bg-black hover:text-white px-8 rounded-full"><i className='mr-2 bx bxl-google text-black' ></i><span className="text-black">G</span>oogle</button>
-                                <button onClick={githubLogIn} className="flex items-center font-medium bg-[#5dff33] text-white py-2 hover:bg-black hover:text-white px-8 rounded-full"><i className='mr-2 bx bxl-github text-black' ></i><span className="text-black">G</span>ithub</button>
+                                <button onClick={googleSignIn} className="flex items-center font-medium bg-[#5dff33] text-white py-2 hover:bg-black hover:text-white px-8 rounded-full"><i className=' bx bxl-google text-black' ></i><span className="text-black">G</span>oogle</button>
+                                <button onClick={githubLogIn} className="flex items-center font-medium bg-[#5dff33] text-white py-2 hover:bg-black hover:text-white px-8 rounded-full"><i className=' bx bxl-github text-black' ></i><span className="text-black">G</span>ithub</button>
                             </div>
                         </div>
                     </form>
