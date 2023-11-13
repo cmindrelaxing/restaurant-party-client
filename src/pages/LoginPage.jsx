@@ -56,7 +56,7 @@ const LoginPage = () => {
             
             
             // get access token
-            axios.post('https://restaurant-management-server-g3evb8yb5.vercel.app/jwt', user, {withCredentials: true})
+            axios.post('https://restaurant-public-server-jmrq3szqz.vercel.app/jwt', user, {withCredentials: true})
             .then(res => {
                 console.log(res.data);
                 if(res.data.success) {

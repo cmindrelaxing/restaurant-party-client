@@ -25,7 +25,7 @@ const Detail = ({details}) => {
         console.log(productInfo);
 
         // add a new item
-        fetch('https://restaurant-management-server-g3evb8yb5.vercel.app/bookings', {
+        fetch('https://restaurant-public-server-jmrq3szqz.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

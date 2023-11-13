@@ -36,7 +36,7 @@ const AllFoodItems = () => {
 
 
     useEffect(() => {
-        fetch(`https://restaurant-management-server-g3evb8yb5.vercel.app/foods?page=${currentPage}&size=${singlePage}`)
+        fetch(`https://restaurant-public-server-jmrq3szqz.vercel.app/foods?page=${currentPage}&size=${singlePage}`)
         .then(res => res.json())
         .then(data => {
             // console.log(data);
@@ -46,7 +46,7 @@ const AllFoodItems = () => {
 
     // pagination for foods count
     useEffect(() => {
-        fetch(`https://restaurant-management-server-g3evb8yb5.vercel.app/foodsCount`)
+        fetch(`https://restaurant-public-server-jmrq3szqz.vercel.app/foodsCount`)
         .then(res => res.json())
         .then(data => {
             // console.log(data);

@@ -17,10 +17,10 @@ const Bookings = () => {
     // const {user} = useAuth();
     // const [bookings, setBookings] = useState();
 
-    // const url = `https://restaurant-management-server-g3evb8yb5.vercel.app/bookings`;
+    // const url = `https://restaurant-public-server-jmrq3szqz.vercel.app/bookings`;
 
     useEffect(() => {
-        axios.get('https://restaurant-management-server-g3evb8yb5.vercel.app/bookings', {withCredentials: true})
+        axios.get('https://restaurant-public-server-jmrq3szqz.vercel.app/bookings', {withCredentials: true})
         .then(res => {
             setBookings(res.data);
         })
@@ -50,7 +50,7 @@ const Bookings = () => {
             if (result.isConfirmed) {
     
 
-            fetch(`https://restaurant-management-server-g3evb8yb5.vercel.app/bookings/${id}`, {
+            fetch(`https://restaurant-public-server-jmrq3szqz.vercel.app/bookings/${id}`, {
                 method: 'DELETE',
             })
             .then(res => res.json())
